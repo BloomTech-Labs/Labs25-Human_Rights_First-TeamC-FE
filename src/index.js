@@ -63,6 +63,11 @@ function App() {
     //     <Route component={NotFoundPage} />
     //   </Switch>
     // </Security>
-    <Loading />
+    <Router>
+      <div className="App">
+        <Route exact path="/" component={Loading} />
+        <Route path="/map" component={Map} />
+      </div>
+    </Router>
   );
 }

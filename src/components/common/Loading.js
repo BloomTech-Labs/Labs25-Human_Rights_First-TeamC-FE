@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Flag, PersonFill, Book, Link } from 'react-bootstrap-icons';
+import { Flag, PersonFill, Book, Link as lk } from 'react-bootstrap-icons';
+import { Link } from 'react-router-dom';
 import NavBar from './NavBar.js';
 import ConsentForm from '../pages/Home/ConsentForm';
 import Popup from 'reactjs-popup';
@@ -23,9 +24,9 @@ export const Loading = () => {
       <header>
         <div className="top">
           <div class="mapBtn">
-            <a className="map" href="/map">
+            <Link to="/map" className="map">
               View Map
-            </a>
+            </Link>
           </div>
         </div>
       </header>
@@ -69,7 +70,7 @@ export const Loading = () => {
             we work where we can best harness American influence to secure core
             freedoms.
           </p>
-          <Link size={30} class="link" />
+          <lk size={30} class="link" />
           <a href="" class="learn">
             Learn more about us
           </a>
