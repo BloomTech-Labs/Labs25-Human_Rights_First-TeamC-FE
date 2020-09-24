@@ -20,6 +20,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Menu from '@material-ui/core/Menu';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
+import axios from 'axios';
 
 import '../../styles/index.css';
 
@@ -105,6 +106,23 @@ const Map = () => {
   const classesForStateFilter = stylesForCityFilter();
   const classesForZipCodeFilter = useStylesForZipCodeFilter();
   const classes = useStyles();
+  const [incidentsData, setIncidentsData] = useState(null);
+  useEffect(() => {
+    axios
+      .get(
+        'http://human-rights-considered.eba-api7kmju.us-east-1.elasticbeanstalk.com/incidents/'
+      )
+      .then(function(response) {
+        // handle success
+        console.log(response.data);
+        setIncidentsData(response.data);
+      })
+      .catch(function(error) {
+        // handle error
+        console.log(error);
+      });
+  }, []);
+
   const submitZipCodeHandler = e => {
     e.preventDefault();
     setViewport({
@@ -163,7 +181,14 @@ const Map = () => {
     if (falseBtn.length > 0) {
       const getBtn = [];
       falseBtn.map(btn => getBtn.push(btn[0]));
+      console.log();
       setFilterData(
+        // incidentsData.filter(
+        //   i =>
+        //     !getBtn.includes(
+        //       i.tags_str.includes(',') ? getFirstType(i.tags_str) : i.tags_str
+        //     )
+        // )
         data.default.data.filter(
           i =>
             !getBtn.includes(
