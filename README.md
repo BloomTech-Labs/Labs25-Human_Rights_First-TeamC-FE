@@ -13,6 +13,12 @@
 
 - [Labs Engineering Standard requirements found here](https://www.notion.so/Human-Rights-First-Roadmap-Team-Kevin-c53ed8e80b0e4584aba47abee5753591)
 
+# Installation Instructions
+
+- Navigate to the root directory with this README in it.
+- Using NPM: npm install
+- then type 'npm start'
+
 ### Environment variable
 
 - `REACT_APP_MAPBOX_TOKEN` Mapbox access tokens (check `https://docs.mapbox.com/help/how-mapbox-works/access-tokens/`)
@@ -21,12 +27,6 @@
 
 https://c.humanrightsfirst.dev/
 ![Humane Right Considered Demo](hrc_demo.gif)
-
-## Components
-
-- Loading
-- Map
-- NavBar
 
 ## Deployed App
 
